@@ -1,5 +1,5 @@
-import pandas as pd
 import snap
+import pandas as pd
 from datetime import datetime
 
 from visualization import plotting
@@ -7,13 +7,13 @@ from visualization import plotting
 
 #%% set script params
 # params
-tooLittleFriendsInCircleThreshold = 20
+tooLittleFriendsInCircleThreshold = 5
 tooManyNodesThreshold = 200
 submissionNumber = datetime.strftime(datetime.today(), '%Y-%m-%d_%H:%M:%S')
 
 # folder paths
 egonetFolderName = '../data/egonets/'
-submissionFolderName = '../sub/'
+submissionFolderName = '../IDs/'
 
 
 #%% some function definitions
@@ -30,12 +30,11 @@ def read_nodeadjlist(filename, G):
 
             for e in es:
                 G.AddNode(int(e))
-                #print 'LINK: ',e1, e
             
                 if e == e1: continue
                 G.AddEdge(int(e1), int(e))
         except Exception, err:
-            print "Warning: ", err
+            #print "Warning: ", err
             pass
 
     print 'G: Nodes %d, Edges %d' % (G.GetNodes(), G.GetEdges())
@@ -45,6 +44,7 @@ def read_nodeadjlist(filename, G):
 def findCommunity():
     #%% make a submission
     submission = pd.read_csv(submissionFolderName + 'sample_submission.csv')
+    #submission = pd.read_csv(submissionFolderName + 'train_ID.csv')
     
     for userId in list(submission['UserId']):
 
