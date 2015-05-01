@@ -15,7 +15,7 @@ def aggregate(userList):
         filename = str(userId) + '.egonet'
         G = read_nodeadjlist(egonetFolderName + filename, G)
 
-    plot = plotting(G, snap.gvlNeato, False)
+    plot = plotting(G, snap.gvlNeato, True)
     plot.run('aggregate_plot', 
             title='USER_ID = '.format('.'.join(userList)))
 

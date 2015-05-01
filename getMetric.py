@@ -64,7 +64,7 @@ def modularity(graph, index, userId):
     
 if __name__ == '__main__':
 
-    claims = pd.read_csv('../IDs/train_ID.csv')['userId']
+    claims = pd.read_csv('../IDs/full_ID.csv')['userId']
 
     index = 0
     for userId in claims:
@@ -79,7 +79,8 @@ if __name__ == '__main__':
         betweenNess(G, userId)
 
         pageRank(G, userId)
-    
+
+        # index is increasing continously
         index = modularity(G, index, userId)
         
 

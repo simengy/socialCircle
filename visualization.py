@@ -9,7 +9,7 @@ class plotting:
     def __init__(self, graph, layout, printLabel=True):
 
         # Choice, Color, Weight
-        self.groups = [['Claim', 'green', 0.75],
+        self.groups = [['Claimant', 'green', 0.75],
                 ['Doctor', 'red', 0.1], 
                 ['Body Shop', 'yellow', 0.05], 
                 ['Agent', 'blue', 0.1]]

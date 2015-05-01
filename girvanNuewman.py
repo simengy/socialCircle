@@ -25,17 +25,27 @@ def read_nodeadjlist(filename, G):
         e1, es = line.split(':')
         es = es.split()
         
+        # There are duplicate edges
         try:
             G.AddNode(int(e1))
-
-            for e in es:
-                G.AddNode(int(e))
-            
-                if e == e1: continue
-                G.AddEdge(int(e1), int(e))
         except Exception, err:
             #print "Warning: ", err
             pass
+
+        for e in es:
+            
+            try:
+                G.AddNode(int(e))
+            except:
+                print "Warning2: "
+                pass
+            
+            if e == e1: continue
+            try:
+                G.AddEdge(int(e1), int(e))
+            except:
+                print "Warning3: "
+                pass
 
     print 'G: Nodes %d, Edges %d' % (G.GetNodes(), G.GetEdges())
     return G
