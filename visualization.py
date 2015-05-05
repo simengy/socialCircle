@@ -10,9 +10,11 @@ class plotting:
 
         # Choice, Color, Weight
         self.groups = [['Claimant', 'green', 0.75],
-                ['Doctor', 'red', 0.1], 
-                ['Body Shop', 'yellow', 0.05], 
-                ['Agent', 'blue', 0.1]]
+                ['Doctor', 'red', 0.05], 
+                ['Body Shop', 'yellow', 0.1], 
+                ['Towing company', 'orange', 0.1], 
+                ['Lawyer', 'purple', 0.05], 
+                ['Agent', 'blue', 0.2]]
 
         self.G = graph
         self.layout = layout
