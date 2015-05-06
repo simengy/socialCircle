@@ -8,13 +8,16 @@ class plotting:
 
     def __init__(self, graph, layout, printLabel=True):
 
-        # Choice, Color, Weight
-        self.groups = [['Claimant', 'green', 0.75],
-                ['Doctor', 'red', 0.05], 
-                ['Body Shop', 'yellow', 0.1], 
-                ['Towing company', 'orange', 0.1], 
-                ['Lawyer', 'purple', 0.05], 
-                ['Agent', 'blue', 0.2]]
+        # Degree of Edge: Choice, Color, Weight
+        self.groups = {
+                0:[['ClaimID','yellow',0.4],],
+                1:[['Claimant', 'green', 0.5],
+                    ['Doctor', 'red', 0.3],
+                    ['Body Shop', 'yellow', 0.3], 
+                    ['Towing company', 'orange', 0.3],
+                    ['Inspector', 'blue', 0.3],
+                    ['Lawyer', 'purple', 0.1]] 
+                }
 
         self.G = graph
         self.layout = layout
@@ -22,13 +25,14 @@ class plotting:
         self.labels = snap.TIntStrH()
         self.NIdColorH = snap.TIntStrH()
         
-    def weighted_choice(self):
     
-        total = sum(w for name, col, w in self.groups)
+    def weighted_choice(self, key):
+    
+        total = sum(w for name, col, w in self.groups[key])
         r = random.uniform(0., total)
         upto = 0.
     
-        for name, col, w in self.groups:
+        for name, col, w in self.groups[key]:
         
             if upto + w  > r:
                 return name, col
@@ -36,13 +40,51 @@ class plotting:
         
         assert False, "Shouldn't get here"
 
+    
+    def segDegree(self, degree):
+        
+        if degree == 0:
+            return None
+        elif degree < 10:
+            return 1
+            
+
+    def hirachical(self):
+        
+        community = None
+
+        # select Insured Nodes
+        for NI in self.G.Nodes():
+            flag = True
+            if random.random() > 0.0 and NI.GetInDeg() > 0:
+            
+                if community is None:
+                    community = [NI.GetId(),]
+                else:
+                    for temp in community:
+                        if snap.GetShortPath(self.G, NI.GetId(), temp) <= 1:
+                            flag = False
+                            break
+                    if flag == True:
+                        community.append(NI.GetId())
+        
+        self.community = community 
+        
+
     def run(self, filename, title='title'):
         
+        # First to select Insured nodes
+        self.hirachical()
+
         for NI in self.G.Nodes():
-    
-            name, col = self.weighted_choice()
+            if NI.GetId() in self.community:
+                bucket = 0
+            else:
+                bucket = self.segDegree(NI.GetInDeg())
+
+            name, col = self.weighted_choice(bucket)
             
-            print NI.GetId(), name, col
+            print NI.GetId(), NI.GetInDeg(), NI.GetOutDeg(), name, col
             if self.printLabel:
                 self.labels[NI.GetId()] = name
             else:

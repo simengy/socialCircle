@@ -7,6 +7,7 @@ from visualization import plotting
 
 #%% set script params
 # params
+MAX_DEGREE = 5
 tooLittleFriendsInCircleThreshold = 5
 tooManyNodesThreshold = 200
 submissionNumber = datetime.strftime(datetime.today(), '%Y-%m-%d_%H:%M:%S')
@@ -31,24 +32,27 @@ def read_nodeadjlist(filename, G):
         except Exception, err:
             #print "Warning: ", err
             pass
-
+         
         for e in es:
-            
+
             try:
                 G.AddNode(int(e))
             except:
-                print "Warning2: "
+                #print "Warning2: "
                 pass
             
-            if e == e1: continue
+            if e == e1: continue            
+            if G.GetNI(int(e1)).GetDeg() >= MAX_DEGREE:
+                break
+            if G.GetNI(int(e)).GetDeg() >= MAX_DEGREE:
+                continue
             try:
                 G.AddEdge(int(e1), int(e))
             except:
-                print "Warning3: "
+                #print "Warning3: "
                 pass
 
     print 'G: Nodes %d, Edges %d' % (G.GetNodes(), G.GetEdges())
-    return G
 
 
 def findCommunity():
@@ -61,7 +65,7 @@ def findCommunity():
         # read graph
         filename = str(userId) + '.egonet'
         G = snap.TUNGraph.New()
-        G = read_nodeadjlist(egonetFolderName + filename, G)
+        read_nodeadjlist(egonetFolderName + filename, G)
 
         # do not calculate for large graphs (it takes too long)
         if G.GetNodes() > tooManyNodesThreshold:
