@@ -11,12 +11,12 @@ class plotting:
         # Degree of Edge: Choice, Color, Weight
         self.groups = {
                 0:[['ClaimID','yellow',0.4],],
-                1:[['Claimant', 'green', 0.5],
-                    ['Doctor', 'red', 0.3],
+                1:[['Doctor', 'red', 0.3],
                     ['Body Shop', 'yellow', 0.3], 
                     ['Towing company', 'orange', 0.3],
                     ['Inspector', 'blue', 0.3],
-                    ['Lawyer', 'purple', 0.1]] 
+                    ['Lawyer', 'purple', 0.2]],
+                2:[['Claimant', 'green', 0.7]]
                 }
 
         self.G = graph
@@ -45,7 +45,7 @@ class plotting:
         
         if degree == 0:
             return None
-        elif degree < 10:
+        else:
             return 1
             
 
@@ -56,22 +56,22 @@ class plotting:
         # select Insured Nodes
         for NI in self.G.Nodes():
             flag = True
-            if random.random() > 0.0 and NI.GetInDeg() > 0:
+            
+            if random.random() > 0.0 and NI.GetInDeg() >= 2:
             
                 if community is None:
                     community = [NI.GetId(),]
                 else:
                     for temp in community:
-                        if snap.GetShortPath(self.G, NI.GetId(), temp) <= 1:
+                        if snap.GetShortPath(self.G, NI.GetId(), temp) == 1:
                             flag = False
                             break
                     if flag == True:
                         community.append(NI.GetId())
-        
+            
         self.community = community 
-        
 
-    def run(self, filename, title='title'):
+    def run(self, filename, claimantList, title='title'):
         
         # First to select Insured nodes
         self.hirachical()
@@ -79,9 +79,11 @@ class plotting:
         for NI in self.G.Nodes():
             if NI.GetId() in self.community:
                 bucket = 0
+            elif NI.GetId() in claimantList:
+                bucket = 2
             else:
                 bucket = self.segDegree(NI.GetInDeg())
-
+            
             name, col = self.weighted_choice(bucket)
             
             print NI.GetId(), NI.GetInDeg(), NI.GetOutDeg(), name, col

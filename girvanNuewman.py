@@ -1,4 +1,5 @@
 import snap
+import random
 import pandas as pd
 from datetime import datetime
 
@@ -7,7 +8,6 @@ from visualization import plotting
 
 #%% set script params
 # params
-MAX_DEGREE = 5
 tooLittleFriendsInCircleThreshold = 5
 tooManyNodesThreshold = 200
 submissionNumber = datetime.strftime(datetime.today(), '%Y-%m-%d_%H:%M:%S')
@@ -18,7 +18,7 @@ submissionFolderName = '../IDs/'
 
 
 #%% some function definitions
-def read_nodeadjlist(filename, G):
+def read_nodeadjlist(filename, G, MAX_DEGREE = 5):
     
     #G = snap.TUNGraph.New()
     
@@ -42,12 +42,13 @@ def read_nodeadjlist(filename, G):
                 pass
             
             if e == e1: continue            
-            if G.GetNI(int(e1)).GetDeg() >= MAX_DEGREE:
-                break
-            if G.GetNI(int(e)).GetDeg() >= MAX_DEGREE:
-                continue
+            #if G.GetNI(int(e1)).GetDeg() >= MAX_DEGREE:
+            #    break
+            #if G.GetNI(int(e)).GetDeg() >= MAX_DEGREE:
+            #    continue
             try:
-                G.AddEdge(int(e1), int(e))
+                if random.random() > 0.5:
+                    G.AddEdge(int(e1), int(e))
             except:
                 #print "Warning3: "
                 pass
