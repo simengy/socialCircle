@@ -8,7 +8,7 @@ class plotting:
 
     def __init__(self, graph, layout, printLabel=True):
 
-        # Degree of Edge: Choice, Color, Weight
+        # Degree of Edge: Role, Color, Weight
         self.groups = {
                 0:[['ClaimID','yellow',0.4],],
                 1:[['Doctor', 'red', 0.3],
@@ -24,6 +24,7 @@ class plotting:
         self.printLabel = printLabel
         self.labels = snap.TIntStrH()
         self.NIdColorH = snap.TIntStrH()
+        self.nameList = {} # nameList is only been assigned once
         
     
     def weighted_choice(self, key):
@@ -75,6 +76,9 @@ class plotting:
         
         # First to select Insured nodes
         self.hirachical()
+        
+        Nodes = snap.TIntFltH()
+        snap.GetPageRank(self.G, Nodes)
 
         for NI in self.G.Nodes():
             if NI.GetId() in self.community:
@@ -84,15 +88,25 @@ class plotting:
             else:
                 bucket = self.segDegree(NI.GetInDeg())
             
-            name, col = self.weighted_choice(bucket)
+            # hacked 'col' for network metric 
+            if NI.GetId() not in self.nameList: 
+                name, _ = self.weighted_choice(bucket)
+                self.nameList[NI.GetId()] = name            
+            else:
+                name = self.nameList[NI.GetId()]
             
-            print NI.GetId(), NI.GetInDeg(), NI.GetOutDeg(), name, col
+            if name == 'ClaimID':
+                col = 5.0
+            else:
+                col = Nodes[NI.GetId()] * 2000
+            
+            #print NI.GetId(), NI.GetInDeg(), NI.GetOutDeg(), name, col
             if self.printLabel:
                 self.labels[NI.GetId()] = name
             else:
                 self.labels[NI.GetId()] = str(NI.GetId())
             
-            self.NIdColorH[NI.GetId()] = col
+            self.NIdColorH[NI.GetId()] = str(col)
             
 
         snap.DrawGViz(self.G, self.layout, 
@@ -100,7 +114,7 @@ class plotting:
                 title, self.labels, self.NIdColorH)
         snap.SavePajek(self.G, '{}/{}.net'.format(SAVE_DIR, filename),
             self.NIdColorH, self.labels)
-
+        
 
 if __name__ == '__main__':
 
