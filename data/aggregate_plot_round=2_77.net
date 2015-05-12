@@ -1,0 +1,1115 @@
+*Vertices 333
+1  "ClaimID" ic 5.0 fos 10
+2  "Body Shop" ic 8.90215457426 fos 10
+3  "Claimant" ic 1.70996089774 fos 10
+4  "Lawyer" ic 5.8847210218 fos 10
+5  "Towing company" ic 5.13544429759 fos 10
+6  "Body Shop" ic 5.99609755887 fos 10
+7  "Body Shop" ic 10.3176127659 fos 10
+8  "Body Shop" ic 9.04061502049 fos 10
+9  "ClaimID" ic 5.0 fos 10
+10  "Lawyer" ic 7.75783985975 fos 10
+11  "Towing company" ic 12.5399483987 fos 10
+12  "ClaimID" ic 5.0 fos 10
+13  "Claimant" ic 1.70269152442 fos 10
+14  "Doctor" ic 7.51570198212 fos 10
+15  "Towing company" ic 7.81774425625 fos 10
+16  "ClaimID" ic 5.0 fos 10
+17  "Doctor" ic 7.28774845162 fos 10
+18  "Lawyer" ic 8.00546589313 fos 10
+19  "Claimant" ic 1.73585351049 fos 10
+20  "Claimant" ic 1.73585351049 fos 10
+21  "ClaimID" ic 5.0 fos 10
+22  "Lawyer" ic 6.16803892891 fos 10
+23  "Claimant" ic 1.7021450753 fos 10
+24  "ClaimID" ic 5.0 fos 10
+25  "Body Shop" ic 9.31479204083 fos 10
+26  "Lawyer" ic 11.4982489067 fos 10
+27  "Claimant" ic 2.12124544161 fos 10
+28  "Towing company" ic 5.74919410457 fos 10
+29  "Claimant" ic 2.12124544161 fos 10
+30  "ClaimID" ic 5.0 fos 10
+31  "Towing company" ic 8.18263589039 fos 10
+32  "Doctor" ic 3.48287438142 fos 10
+33  "Towing company" ic 6.91828128196 fos 10
+34  "Body Shop" ic 5.21683087388 fos 10
+35  "Doctor" ic 5.14714418646 fos 10
+36  "Body Shop" ic 4.91647439201 fos 10
+37  "Inspector" ic 11.7823341021 fos 10
+38  "ClaimID" ic 5.0 fos 10
+39  "Claimant" ic 2.81698320926 fos 10
+40  "Doctor" ic 9.87573650364 fos 10
+41  "Claimant" ic 2.81698320926 fos 10
+42  "Claimant" ic 2.81698320926 fos 10
+43  "ClaimID" ic 5.0 fos 10
+44  "Doctor" ic 5.30099297126 fos 10
+45  "Inspector" ic 8.27224732894 fos 10
+46  "Towing company" ic 6.53458170219 fos 10
+47  "Doctor" ic 8.00635086078 fos 10
+48  "ClaimID" ic 5.0 fos 10
+49  "Inspector" ic 4.37626901204 fos 10
+50  "Doctor" ic 7.4464745846 fos 10
+51  "Lawyer" ic 6.37005434157 fos 10
+52  "Claimant" ic 1.70669757776 fos 10
+53  "ClaimID" ic 5.0 fos 10
+54  "Claimant" ic 2.64629537211 fos 10
+55  "Claimant" ic 2.64629537211 fos 10
+56  "Claimant" ic 2.64629537211 fos 10
+57  "Claimant" ic 2.64629537211 fos 10
+58  "Body Shop" ic 3.45063135555 fos 10
+59  "Doctor" ic 7.8704390832 fos 10
+60  "ClaimID" ic 5.0 fos 10
+61  "Claimant" ic 1.73838759019 fos 10
+62  "Lawyer" ic 7.86448374153 fos 10
+63  "Doctor" ic 9.46161082673 fos 10
+64  "Claimant" ic 1.73838759019 fos 10
+65  "Inspector" ic 4.36689507648 fos 10
+66  "ClaimID" ic 5.0 fos 10
+67  "Inspector" ic 5.78596051456 fos 10
+68  "Doctor" ic 5.77017631179 fos 10
+69  "Doctor" ic 2.49064922011 fos 10
+70  "ClaimID" ic 5.0 fos 10
+71  "Inspector" ic 5.70766606114 fos 10
+72  "Doctor" ic 4.25659677772 fos 10
+73  "Inspector" ic 2.82611203373 fos 10
+74  "ClaimID" ic 5.0 fos 10
+75  "Claimant" ic 1.73169006999 fos 10
+76  "Towing company" ic 2.59728157163 fos 10
+77  "Lawyer" ic 3.63943853774 fos 10
+78  "ClaimID" ic 5.0 fos 10
+79  "Towing company" ic 1.94305786701 fos 10
+80  "Doctor" ic 1.94305786701 fos 10
+81  "Claimant" ic 1.94305786701 fos 10
+82  "Body Shop" ic 1.94305786701 fos 10
+83  "ClaimID" ic 5.0 fos 10
+84  "Doctor" ic 1.77347367185 fos 10
+85  "Claimant" ic 1.77347367185 fos 10
+86  "Doctor" ic 2.81563063796 fos 10
+87  "ClaimID" ic 5.0 fos 10
+88  "Inspector" ic 1.86711039513 fos 10
+89  "Inspector" ic 1.86711039513 fos 10
+90  "Claimant" ic 1.86711039513 fos 10
+91  "Body Shop" ic 1.86711039513 fos 10
+92  "Doctor" ic 3.53394607117 fos 10
+93  "ClaimID" ic 5.0 fos 10
+94  "Claimant" ic 1.95344518794 fos 10
+95  "Body Shop" ic 2.99560215405 fos 10
+96  "Claimant" ic 1.95344518794 fos 10
+97  "Claimant" ic 1.95344518794 fos 10
+98  "Doctor" ic 1.95344518794 fos 10
+99  "Towing company" ic 1.95344518794 fos 10
+100  "Body Shop" ic 2.99560215405 fos 10
+101  "ClaimID" ic 5.0 fos 10
+102  "Claimant" ic 1.72089749372 fos 10
+103  "Inspector" ic 1.72089749372 fos 10
+104  "ClaimID" ic 5.0 fos 10
+105  "Inspector" ic 1.91499747392 fos 10
+106  "Doctor" ic 1.91499747392 fos 10
+107  "Claimant" ic 1.91499747392 fos 10
+108  "Claimant" ic 1.91499747392 fos 10
+109  "Lawyer" ic 1.91499747392 fos 10
+110  "ClaimID" ic 5.0 fos 10
+111  "Body Shop" ic 4.62615335039 fos 10
+112  "Claimant" ic 4.62615335039 fos 10
+113  "ClaimID" ic 5.0 fos 10
+114  "Claimant" ic 1.89166536878 fos 10
+115  "Claimant" ic 1.89166536878 fos 10
+116  "Claimant" ic 1.89166536878 fos 10
+117  "Lawyer" ic 1.89166536878 fos 10
+118  "Claimant" ic 1.89166536878 fos 10
+119  "ClaimID" ic 5.0 fos 10
+120  "Claimant" ic 1.73948349977 fos 10
+121  "Claimant" ic 1.73948349977 fos 10
+122  "ClaimID" ic 5.0 fos 10
+123  "Body Shop" ic 1.76649240253 fos 10
+124  "Towing company" ic 1.76649240253 fos 10
+125  "ClaimID" ic 5.0 fos 10
+126  "Claimant" ic 1.89779431088 fos 10
+127  "Lawyer" ic 1.89779431088 fos 10
+128  "Claimant" ic 1.89779431088 fos 10
+129  "Towing company" ic 1.89779431088 fos 10
+130  "Claimant" ic 1.89779431088 fos 10
+131  "ClaimID" ic 5.0 fos 10
+132  "Claimant" ic 2.04111330268 fos 10
+133  "Lawyer" ic 2.04111330268 fos 10
+134  "Claimant" ic 2.04111330268 fos 10
+135  "Inspector" ic 2.04111330268 fos 10
+136  "Doctor" ic 2.04111330268 fos 10
+137  "Doctor" ic 2.04111330268 fos 10
+138  "Body Shop" ic 2.04111330268 fos 10
+139  "ClaimID" ic 5.0 fos 10
+140  "Inspector" ic 8.48575572078 fos 10
+141  "Lawyer" ic 2.76337047591 fos 10
+142  "Towing company" ic 4.69767033969 fos 10
+143  "Claimant" ic 1.82603021348 fos 10
+144  "Towing company" ic 5.74599650651 fos 10
+145  "ClaimID" ic 5.0 fos 10
+146  "Claimant" ic 1.87597139386 fos 10
+147  "Claimant" ic 1.87597139386 fos 10
+148  "Claimant" ic 1.87597139386 fos 10
+149  "Doctor" ic 6.92105694189 fos 10
+150  "Lawyer" ic 6.59215702623 fos 10
+151  "ClaimID" ic 5.0 fos 10
+152  "Doctor" ic 6.44755934074 fos 10
+153  "Doctor" ic 6.56032388635 fos 10
+154  "Inspector" ic 6.42671010475 fos 10
+155  "Claimant" ic 1.79717937395 fos 10
+156  "ClaimID" ic 5.0 fos 10
+157  "Inspector" ic 6.59271490708 fos 10
+158  "Lawyer" ic 3.02840991085 fos 10
+159  "Claimant" ic 1.89651841204 fos 10
+160  "Claimant" ic 1.89651841204 fos 10
+161  "Inspector" ic 4.95178890377 fos 10
+162  "Doctor" ic 5.64582967059 fos 10
+163  "ClaimID" ic 5.0 fos 10
+164  "Claimant" ic 1.82352381975 fos 10
+165  "Claimant" ic 1.82352381975 fos 10
+166  "ClaimID" ic 5.0 fos 10
+167  "Doctor" ic 4.66515470331 fos 10
+168  "Towing company" ic 5.67721130993 fos 10
+169  "Doctor" ic 9.51583746276 fos 10
+170  "Body Shop" ic 6.77750320206 fos 10
+171  "Claimant" ic 1.83824116334 fos 10
+172  "Claimant" ic 1.83824116334 fos 10
+173  "Inspector" ic 6.52153479071 fos 10
+174  "ClaimID" ic 5.0 fos 10
+175  "Claimant" ic 1.84866945234 fos 10
+176  "Inspector" ic 6.7189628896 fos 10
+177  "Claimant" ic 1.84866945234 fos 10
+178  "Towing company" ic 6.6416308688 fos 10
+179  "Inspector" ic 6.62614914404 fos 10
+180  "ClaimID" ic 5.0 fos 10
+181  "Claimant" ic 1.92800142077 fos 10
+182  "Claimant" ic 1.92800142077 fos 10
+183  "Claimant" ic 1.92800142077 fos 10
+184  "Claimant" ic 1.92800142077 fos 10
+185  "Body Shop" ic 3.71999208361 fos 10
+186  "Doctor" ic 5.7253453261 fos 10
+187  "ClaimID" ic 5.0 fos 10
+188  "Claimant" ic 2.0730621748 fos 10
+189  "Doctor" ic 7.82600309256 fos 10
+190  "Doctor" ic 2.0730621748 fos 10
+191  "Inspector" ic 8.00089739043 fos 10
+192  "Doctor" ic 7.83303432685 fos 10
+193  "Inspector" ic 5.74163923337 fos 10
+194  "ClaimID" ic 5.0 fos 10
+195  "Claimant" ic 1.79767195579 fos 10
+196  "Inspector" ic 3.85469276718 fos 10
+197  "Lawyer" ic 4.56424052974 fos 10
+198  "ClaimID" ic 5.0 fos 10
+199  "Towing company" ic 4.59259878743 fos 10
+200  "Towing company" ic 3.76680851294 fos 10
+201  "ClaimID" ic 5.0 fos 10
+202  "Inspector" ic 2.79024897816 fos 10
+203  "Lawyer" ic 5.60621540982 fos 10
+204  "Claimant" ic 1.84248042672 fos 10
+205  "Towing company" ic 4.694080854 fos 10
+206  "Claimant" ic 1.84248042672 fos 10
+207  "ClaimID" ic 5.0 fos 10
+208  "Inspector" ic 3.72825482366 fos 10
+209  "Doctor" ic 3.83228479715 fos 10
+210  "Towing company" ic 2.75057656758 fos 10
+211  "Towing company" ic 3.77610378335 fos 10
+212  "Inspector" ic 1.85535695964 fos 10
+213  "Towing company" ic 2.75057656758 fos 10
+214  "ClaimID" ic 5.0 fos 10
+215  "Inspector" ic 2.98724845845 fos 10
+216  "Doctor" ic 2.03279239971 fos 10
+217  "Claimant" ic 2.03279239971 fos 10
+218  "Claimant" ic 2.03279239971 fos 10
+219  "Towing company" ic 2.03279239971 fos 10
+220  "Towing company" ic 2.03279239971 fos 10
+221  "ClaimID" ic 5.0 fos 10
+222  "Doctor" ic 2.90453056011 fos 10
+223  "Towing company" ic 1.90891304897 fos 10
+224  "Doctor" ic 1.90891304897 fos 10
+225  "Doctor" ic 2.89022337535 fos 10
+226  "Towing company" ic 1.90891304897 fos 10
+227  "ClaimID" ic 5.0 fos 10
+228  "Towing company" ic 1.88221122728 fos 10
+229  "Body Shop" ic 1.88221122728 fos 10
+230  "ClaimID" ic 5.0 fos 10
+231  "Claimant" ic 1.89211875148 fos 10
+232  "Doctor" ic 6.9604430697 fos 10
+233  "Body Shop" ic 6.96774453201 fos 10
+234  "Doctor" ic 7.94774946338 fos 10
+235  "Claimant" ic 1.89211875148 fos 10
+236  "ClaimID" ic 5.0 fos 10
+237  "Lawyer" ic 4.95988114217 fos 10
+238  "Lawyer" ic 2.01558031963 fos 10
+239  "Claimant" ic 2.01558031963 fos 10
+240  "Doctor" ic 2.01558031963 fos 10
+241  "Lawyer" ic 4.98791489275 fos 10
+242  "Claimant" ic 2.01558031963 fos 10
+243  "ClaimID" ic 5.0 fos 10
+244  "Inspector" ic 3.915747315 fos 10
+245  "Doctor" ic 5.95696533522 fos 10
+246  "Doctor" ic 3.9087231866 fos 10
+247  "Claimant" ic 1.92491470882 fos 10
+248  "Claimant" ic 1.92491470882 fos 10
+249  "Body Shop" ic 4.97236709291 fos 10
+250  "ClaimID" ic 5.0 fos 10
+251  "Lawyer" ic 3.89626310944 fos 10
+252  "Inspector" ic 5.91591534192 fos 10
+253  "ClaimID" ic 5.0 fos 10
+254  "Doctor" ic 5.02857098543 fos 10
+255  "Inspector" ic 3.83720007878 fos 10
+256  "Doctor" ic 3.9087231866 fos 10
+257  "Body Shop" ic 5.0236048654 fos 10
+258  "Towing company" ic 3.85668428433 fos 10
+259  "Doctor" ic 5.06136694277 fos 10
+260  "ClaimID" ic 5.0 fos 10
+261  "Towing company" ic 3.91570831444 fos 10
+262  "Inspector" ic 4.91512080998 fos 10
+263  "Claimant" ic 1.90047665594 fos 10
+264  "Doctor" ic 7.01044801355 fos 10
+265  "Inspector" ic 4.03401377521 fos 10
+266  "Doctor" ic 3.98010685192 fos 10
+267  "Doctor" ic 2.87224930153 fos 10
+268  "ClaimID" ic 5.0 fos 10
+269  "Towing company" ic 4.92961216766 fos 10
+270  "Body Shop" ic 5.97896948382 fos 10
+271  "Towing company" ic 3.9271423973 fos 10
+272  "Body Shop" ic 2.89153124702 fos 10
+273  "Claimant" ic 1.91975860144 fos 10
+274  "Claimant" ic 1.91975860144 fos 10
+275  "ClaimID" ic 5.0 fos 10
+276  "Claimant" ic 1.95772293888 fos 10
+277  "Claimant" ic 1.95772293888 fos 10
+278  "Doctor" ic 1.95772293888 fos 10
+279  "ClaimID" ic 5.0 fos 10
+280  "Claimant" ic 1.9199608615 fos 10
+281  "Body Shop" ic 3.88448739379 fos 10
+282  "Towing company" ic 1.9199608615 fos 10
+283  "Lawyer" ic 4.09146231821 fos 10
+284  "Towing company" ic 4.09146231821 fos 10
+285  "Inspector" ic 3.94855554506 fos 10
+286  "ClaimID" ic 5.0 fos 10
+287  "Claimant" ic 1.90870894172 fos 10
+288  "Towing company" ic 4.92852147586 fos 10
+289  "Towing company" ic 3.89767352689 fos 10
+290  "Doctor" ic 3.87169943789 fos 10
+291  "Towing company" ic 3.93048175695 fos 10
+292  "Claimant" ic 1.90870894172 fos 10
+293  "Claimant" ic 1.90870894172 fos 10
+294  "ClaimID" ic 5.0 fos 10
+295  "Claimant" ic 2.68853275653 fos 10
+296  "Claimant" ic 2.68853275653 fos 10
+297  "Claimant" ic 2.68853275653 fos 10
+298  "Claimant" ic 2.68853275653 fos 10
+299  "Towing company" ic 4.3202435817 fos 10
+300  "Towing company" ic 4.56423654746 fos 10
+301  "Claimant" ic 2.68853275653 fos 10
+302  "ClaimID" ic 5.0 fos 10
+303  "Doctor" ic 7.64214067158 fos 10
+305  "ClaimID" ic 5.0 fos 10
+307  "Inspector" ic 6.09919657 fos 10
+309  "Lawyer" ic 5.85450881595 fos 10
+310  "ClaimID" ic 5.0 fos 10
+316  "Body Shop" ic 2.77660469183 fos 10
+317  "ClaimID" ic 5.0 fos 10
+319  "Towing company" ic 5.95125961857 fos 10
+321  "Inspector" ic 9.5178444625 fos 10
+322  "ClaimID" ic 5.0 fos 10
+323  "Inspector" ic 3.70625157998 fos 10
+324  "Claimant" ic 3.70625157998 fos 10
+325  "Claimant" ic 3.70625157998 fos 10
+326  "Lawyer" ic 3.70625157998 fos 10
+327  "Body Shop" ic 3.70625157998 fos 10
+328  "Claimant" ic 3.70625157998 fos 10
+329  "ClaimID" ic 5.0 fos 10
+330  "Inspector" ic 3.93622702258 fos 10
+331  "Claimant" ic 3.93622702258 fos 10
+332  "Body Shop" ic 3.93622702258 fos 10
+333  "Towing company" ic 3.93622702258 fos 10
+*Edges 790
+1 2 1 c Black
+1 3 1 c Black
+1 4 1 c Black
+1 5 1 c Black
+1 6 1 c Black
+1 7 1 c Black
+1 8 1 c Black
+1 11 1 c Black
+1 28 1 c Black
+1 31 1 c Black
+1 44 1 c Black
+1 59 1 c Black
+1 62 1 c Black
+1 63 1 c Black
+1 71 1 c Black
+2 43 1 c Black
+2 60 1 c Black
+2 66 1 c Black
+2 70 1 c Black
+2 104 1 c Black
+2 125 1 c Black
+2 230 1 c Black
+2 286 1 c Black
+4 9 1 c Black
+4 21 1 c Black
+4 70 1 c Black
+4 101 1 c Black
+4 125 1 c Black
+5 12 1 c Black
+5 60 1 c Black
+5 87 1 c Black
+5 101 1 c Black
+6 16 1 c Black
+6 43 1 c Black
+6 48 1 c Black
+6 60 1 c Black
+6 93 1 c Black
+7 9 1 c Black
+7 16 1 c Black
+7 21 1 c Black
+7 43 1 c Black
+7 48 1 c Black
+7 66 1 c Black
+7 74 1 c Black
+7 83 1 c Black
+7 113 1 c Black
+7 131 1 c Black
+8 9 1 c Black
+8 21 1 c Black
+8 83 1 c Black
+8 93 1 c Black
+8 101 1 c Black
+8 104 1 c Black
+8 113 1 c Black
+8 286 1 c Black
+9 10 1 c Black
+9 11 1 c Black
+9 14 1 c Black
+9 33 1 c Black
+9 36 1 c Black
+9 40 1 c Black
+9 45 1 c Black
+9 51 1 c Black
+9 59 1 c Black
+9 63 1 c Black
+9 65 1 c Black
+9 71 1 c Black
+10 48 1 c Black
+10 60 1 c Black
+10 70 1 c Black
+10 74 1 c Black
+10 113 1 c Black
+10 119 1 c Black
+10 125 1 c Black
+11 16 1 c Black
+11 30 1 c Black
+11 43 1 c Black
+11 66 1 c Black
+11 74 1 c Black
+11 78 1 c Black
+11 87 1 c Black
+11 93 1 c Black
+11 119 1 c Black
+11 131 1 c Black
+11 286 1 c Black
+12 13 1 c Black
+12 14 1 c Black
+12 15 1 c Black
+12 25 1 c Black
+12 31 1 c Black
+12 35 1 c Black
+12 37 1 c Black
+12 40 1 c Black
+12 46 1 c Black
+12 50 1 c Black
+12 59 1 c Black
+12 62 1 c Black
+12 67 1 c Black
+12 71 1 c Black
+14 21 1 c Black
+14 48 1 c Black
+14 70 1 c Black
+14 101 1 c Black
+14 113 1 c Black
+14 119 1 c Black
+15 16 1 c Black
+15 43 1 c Black
+15 74 1 c Black
+15 78 1 c Black
+15 87 1 c Black
+15 101 1 c Black
+15 122 1 c Black
+16 17 1 c Black
+16 18 1 c Black
+16 19 1 c Black
+16 20 1 c Black
+16 22 1 c Black
+16 26 1 c Black
+16 36 1 c Black
+16 40 1 c Black
+16 46 1 c Black
+16 50 1 c Black
+16 71 1 c Black
+17 70 1 c Black
+17 74 1 c Black
+17 83 1 c Black
+17 93 1 c Black
+17 104 1 c Black
+17 125 1 c Black
+18 60 1 c Black
+18 66 1 c Black
+18 70 1 c Black
+18 87 1 c Black
+18 104 1 c Black
+18 122 1 c Black
+18 125 1 c Black
+21 22 1 c Black
+21 23 1 c Black
+21 31 1 c Black
+21 33 1 c Black
+21 37 1 c Black
+21 47 1 c Black
+21 50 1 c Black
+21 62 1 c Black
+21 63 1 c Black
+21 72 1 c Black
+21 92 1 c Black
+22 48 1 c Black
+22 60 1 c Black
+22 113 1 c Black
+22 125 1 c Black
+24 25 1 c Black
+24 26 1 c Black
+24 27 1 c Black
+24 28 1 c Black
+24 29 1 c Black
+25 74 1 c Black
+25 78 1 c Black
+25 83 1 c Black
+25 101 1 c Black
+25 113 1 c Black
+25 119 1 c Black
+25 125 1 c Black
+26 30 1 c Black
+26 43 1 c Black
+26 60 1 c Black
+26 66 1 c Black
+26 70 1 c Black
+26 83 1 c Black
+26 93 1 c Black
+26 101 1 c Black
+26 113 1 c Black
+26 119 1 c Black
+28 87 1 c Black
+28 104 1 c Black
+28 119 1 c Black
+30 31 1 c Black
+30 32 1 c Black
+30 33 1 c Black
+30 34 1 c Black
+30 35 1 c Black
+30 36 1 c Black
+30 37 1 c Black
+30 47 1 c Black
+30 50 1 c Black
+30 59 1 c Black
+30 67 1 c Black
+30 68 1 c Black
+30 69 1 c Black
+31 43 1 c Black
+31 48 1 c Black
+31 60 1 c Black
+31 101 1 c Black
+31 122 1 c Black
+32 48 1 c Black
+32 113 1 c Black
+33 70 1 c Black
+33 74 1 c Black
+33 93 1 c Black
+33 113 1 c Black
+34 70 1 c Black
+34 74 1 c Black
+34 78 1 c Black
+34 83 1 c Black
+35 60 1 c Black
+35 74 1 c Black
+35 113 1 c Black
+36 70 1 c Black
+36 119 1 c Black
+37 48 1 c Black
+37 70 1 c Black
+37 78 1 c Black
+37 87 1 c Black
+37 93 1 c Black
+37 119 1 c Black
+37 122 1 c Black
+37 125 1 c Black
+37 131 1 c Black
+38 39 1 c Black
+38 40 1 c Black
+38 41 1 c Black
+38 42 1 c Black
+40 48 1 c Black
+40 83 1 c Black
+40 87 1 c Black
+40 122 1 c Black
+40 131 1 c Black
+43 44 1 c Black
+43 45 1 c Black
+43 46 1 c Black
+43 47 1 c Black
+43 62 1 c Black
+43 67 1 c Black
+43 68 1 c Black
+43 72 1 c Black
+44 83 1 c Black
+44 87 1 c Black
+44 125 1 c Black
+45 48 1 c Black
+45 60 1 c Black
+45 66 1 c Black
+45 83 1 c Black
+45 101 1 c Black
+45 119 1 c Black
+45 122 1 c Black
+46 48 1 c Black
+46 70 1 c Black
+46 74 1 c Black
+46 101 1 c Black
+47 66 1 c Black
+47 87 1 c Black
+47 104 1 c Black
+47 119 1 c Black
+47 131 1 c Black
+48 49 1 c Black
+48 50 1 c Black
+48 51 1 c Black
+48 52 1 c Black
+49 74 1 c Black
+49 83 1 c Black
+49 87 1 c Black
+50 74 1 c Black
+50 101 1 c Black
+50 122 1 c Black
+51 78 1 c Black
+51 104 1 c Black
+51 119 1 c Black
+51 125 1 c Black
+53 54 1 c Black
+53 55 1 c Black
+53 56 1 c Black
+53 57 1 c Black
+53 58 1 c Black
+53 59 1 c Black
+58 66 1 c Black
+59 78 1 c Black
+59 104 1 c Black
+60 61 1 c Black
+60 62 1 c Black
+60 63 1 c Black
+60 64 1 c Black
+60 65 1 c Black
+62 66 1 c Black
+62 104 1 c Black
+62 131 1 c Black
+63 66 1 c Black
+63 83 1 c Black
+63 101 1 c Black
+63 119 1 c Black
+63 122 1 c Black
+63 131 1 c Black
+65 66 1 c Black
+65 93 1 c Black
+66 67 1 c Black
+66 68 1 c Black
+66 69 1 c Black
+66 71 1 c Black
+67 83 1 c Black
+67 122 1 c Black
+68 101 1 c Black
+68 119 1 c Black
+68 122 1 c Black
+70 71 1 c Black
+70 72 1 c Black
+70 73 1 c Black
+72 104 1 c Black
+73 131 1 c Black
+74 75 1 c Black
+74 76 1 c Black
+74 77 1 c Black
+76 122 1 c Black
+77 78 1 c Black
+77 122 1 c Black
+78 79 1 c Black
+78 80 1 c Black
+78 81 1 c Black
+78 82 1 c Black
+78 86 1 c Black
+78 95 1 c Black
+78 100 1 c Black
+83 84 1 c Black
+83 85 1 c Black
+83 86 1 c Black
+87 88 1 c Black
+87 89 1 c Black
+87 90 1 c Black
+87 91 1 c Black
+87 92 1 c Black
+92 122 1 c Black
+93 94 1 c Black
+93 95 1 c Black
+93 96 1 c Black
+93 97 1 c Black
+93 98 1 c Black
+93 99 1 c Black
+93 100 1 c Black
+101 102 1 c Black
+101 103 1 c Black
+104 105 1 c Black
+104 106 1 c Black
+104 107 1 c Black
+104 108 1 c Black
+104 109 1 c Black
+110 111 1 c Black
+110 112 1 c Black
+113 114 1 c Black
+113 115 1 c Black
+113 116 1 c Black
+113 117 1 c Black
+113 118 1 c Black
+119 120 1 c Black
+119 121 1 c Black
+122 123 1 c Black
+122 124 1 c Black
+125 126 1 c Black
+125 127 1 c Black
+125 128 1 c Black
+125 129 1 c Black
+125 130 1 c Black
+131 132 1 c Black
+131 133 1 c Black
+131 134 1 c Black
+131 135 1 c Black
+131 136 1 c Black
+131 137 1 c Black
+131 138 1 c Black
+139 140 1 c Black
+139 141 1 c Black
+139 142 1 c Black
+139 143 1 c Black
+139 144 1 c Black
+139 154 1 c Black
+139 169 1 c Black
+139 178 1 c Black
+139 186 1 c Black
+139 192 1 c Black
+139 196 1 c Black
+139 199 1 c Black
+139 203 1 c Black
+139 208 1 c Black
+139 211 1 c Black
+140 151 1 c Black
+140 166 1 c Black
+140 174 1 c Black
+140 194 1 c Black
+140 198 1 c Black
+140 207 1 c Black
+140 214 1 c Black
+141 166 1 c Black
+142 174 1 c Black
+142 180 1 c Black
+142 194 1 c Black
+144 151 1 c Black
+144 166 1 c Black
+144 207 1 c Black
+144 214 1 c Black
+145 146 1 c Black
+145 147 1 c Black
+145 148 1 c Black
+145 149 1 c Black
+145 150 1 c Black
+145 153 1 c Black
+145 154 1 c Black
+145 157 1 c Black
+145 168 1 c Black
+145 169 1 c Black
+145 170 1 c Black
+145 197 1 c Black
+145 199 1 c Black
+145 200 1 c Black
+145 205 1 c Black
+149 180 1 c Black
+149 194 1 c Black
+149 214 1 c Black
+149 221 1 c Black
+149 227 1 c Black
+150 151 1 c Black
+150 180 1 c Black
+150 194 1 c Black
+150 201 1 c Black
+150 207 1 c Black
+151 152 1 c Black
+151 153 1 c Black
+151 154 1 c Black
+151 155 1 c Black
+151 157 1 c Black
+151 161 1 c Black
+151 167 1 c Black
+151 176 1 c Black
+151 191 1 c Black
+151 193 1 c Black
+151 197 1 c Black
+151 199 1 c Black
+152 163 1 c Black
+152 194 1 c Black
+152 198 1 c Black
+152 207 1 c Black
+152 227 1 c Black
+153 163 1 c Black
+153 180 1 c Black
+153 194 1 c Black
+153 201 1 c Black
+154 166 1 c Black
+154 194 1 c Black
+154 198 1 c Black
+156 157 1 c Black
+156 158 1 c Black
+156 159 1 c Black
+156 160 1 c Black
+156 161 1 c Black
+156 162 1 c Black
+156 178 1 c Black
+156 179 1 c Black
+156 189 1 c Black
+156 191 1 c Black
+156 200 1 c Black
+156 203 1 c Black
+156 209 1 c Black
+156 211 1 c Black
+156 222 1 c Black
+157 163 1 c Black
+157 174 1 c Black
+157 207 1 c Black
+158 214 1 c Black
+161 180 1 c Black
+161 214 1 c Black
+162 163 1 c Black
+162 166 1 c Black
+162 174 1 c Black
+162 201 1 c Black
+163 164 1 c Black
+163 165 1 c Black
+163 167 1 c Black
+163 169 1 c Black
+163 173 1 c Black
+163 178 1 c Black
+163 179 1 c Black
+163 186 1 c Black
+163 189 1 c Black
+163 192 1 c Black
+163 193 1 c Black
+166 167 1 c Black
+166 168 1 c Black
+166 169 1 c Black
+166 170 1 c Black
+166 171 1 c Black
+166 172 1 c Black
+166 173 1 c Black
+166 176 1 c Black
+166 189 1 c Black
+166 192 1 c Black
+167 221 1 c Black
+168 180 1 c Black
+168 198 1 c Black
+168 201 1 c Black
+169 180 1 c Black
+169 194 1 c Black
+169 201 1 c Black
+169 221 1 c Black
+169 227 1 c Black
+170 174 1 c Black
+170 180 1 c Black
+170 221 1 c Black
+170 227 1 c Black
+173 180 1 c Black
+173 194 1 c Black
+173 198 1 c Black
+173 201 1 c Black
+174 175 1 c Black
+174 176 1 c Black
+174 177 1 c Black
+174 178 1 c Black
+174 179 1 c Black
+174 189 1 c Black
+174 192 1 c Black
+174 202 1 c Black
+174 203 1 c Black
+174 208 1 c Black
+176 194 1 c Black
+176 214 1 c Black
+176 221 1 c Black
+178 201 1 c Black
+178 221 1 c Black
+179 194 1 c Black
+179 207 1 c Black
+179 221 1 c Black
+180 181 1 c Black
+180 182 1 c Black
+180 183 1 c Black
+180 184 1 c Black
+180 185 1 c Black
+180 186 1 c Black
+185 194 1 c Black
+185 198 1 c Black
+186 201 1 c Black
+186 221 1 c Black
+187 188 1 c Black
+187 189 1 c Black
+187 190 1 c Black
+187 191 1 c Black
+187 192 1 c Black
+187 193 1 c Black
+189 201 1 c Black
+189 221 1 c Black
+191 201 1 c Black
+191 207 1 c Black
+191 214 1 c Black
+191 221 1 c Black
+192 198 1 c Black
+192 214 1 c Black
+193 198 1 c Black
+193 207 1 c Black
+194 195 1 c Black
+194 196 1 c Black
+194 197 1 c Black
+196 214 1 c Black
+197 198 1 c Black
+198 199 1 c Black
+198 200 1 c Black
+198 203 1 c Black
+198 205 1 c Black
+198 210 1 c Black
+198 213 1 c Black
+201 202 1 c Black
+201 203 1 c Black
+201 204 1 c Black
+201 205 1 c Black
+201 206 1 c Black
+205 227 1 c Black
+207 208 1 c Black
+207 209 1 c Black
+207 210 1 c Black
+207 211 1 c Black
+207 212 1 c Black
+207 213 1 c Black
+207 215 1 c Black
+209 227 1 c Black
+214 215 1 c Black
+214 216 1 c Black
+214 217 1 c Black
+214 218 1 c Black
+214 219 1 c Black
+214 220 1 c Black
+221 222 1 c Black
+221 223 1 c Black
+221 224 1 c Black
+221 225 1 c Black
+221 226 1 c Black
+225 227 1 c Black
+227 228 1 c Black
+227 229 1 c Black
+227 232 1 c Black
+227 233 1 c Black
+227 234 1 c Black
+227 237 1 c Black
+227 252 1 c Black
+230 231 1 c Black
+230 232 1 c Black
+230 233 1 c Black
+230 234 1 c Black
+230 235 1 c Black
+230 237 1 c Black
+230 245 1 c Black
+230 254 1 c Black
+230 261 1 c Black
+230 264 1 c Black
+230 269 1 c Black
+230 288 1 c Black
+230 290 1 c Black
+232 236 1 c Black
+232 253 1 c Black
+232 260 1 c Black
+232 286 1 c Black
+233 260 1 c Black
+233 268 1 c Black
+233 275 1 c Black
+233 279 1 c Black
+234 250 1 c Black
+234 268 1 c Black
+234 275 1 c Black
+234 279 1 c Black
+234 286 1 c Black
+236 237 1 c Black
+236 238 1 c Black
+236 239 1 c Black
+236 240 1 c Black
+236 241 1 c Black
+236 242 1 c Black
+236 254 1 c Black
+236 257 1 c Black
+236 259 1 c Black
+236 265 1 c Black
+236 266 1 c Black
+236 270 1 c Black
+236 283 1 c Black
+236 284 1 c Black
+237 250 1 c Black
+241 253 1 c Black
+241 260 1 c Black
+241 286 1 c Black
+243 244 1 c Black
+243 245 1 c Black
+243 246 1 c Black
+243 247 1 c Black
+243 248 1 c Black
+243 249 1 c Black
+243 251 1 c Black
+243 252 1 c Black
+243 256 1 c Black
+243 257 1 c Black
+243 259 1 c Black
+243 261 1 c Black
+243 262 1 c Black
+243 264 1 c Black
+243 289 1 c Black
+244 250 1 c Black
+244 279 1 c Black
+245 253 1 c Black
+245 275 1 c Black
+245 279 1 c Black
+246 253 1 c Black
+246 268 1 c Black
+249 250 1 c Black
+249 268 1 c Black
+249 275 1 c Black
+250 251 1 c Black
+250 252 1 c Black
+250 255 1 c Black
+250 258 1 c Black
+250 262 1 c Black
+250 267 1 c Black
+250 270 1 c Black
+250 272 1 c Black
+250 285 1 c Black
+250 288 1 c Black
+250 290 1 c Black
+251 260 1 c Black
+252 268 1 c Black
+252 279 1 c Black
+253 254 1 c Black
+253 255 1 c Black
+253 256 1 c Black
+253 257 1 c Black
+253 258 1 c Black
+253 259 1 c Black
+253 266 1 c Black
+253 270 1 c Black
+253 281 1 c Black
+253 289 1 c Black
+253 291 1 c Black
+254 275 1 c Black
+255 260 1 c Black
+256 268 1 c Black
+257 279 1 c Black
+258 279 1 c Black
+259 275 1 c Black
+260 261 1 c Black
+260 262 1 c Black
+260 263 1 c Black
+260 264 1 c Black
+260 265 1 c Black
+260 266 1 c Black
+260 267 1 c Black
+260 269 1 c Black
+260 271 1 c Black
+260 281 1 c Black
+262 268 1 c Black
+264 268 1 c Black
+264 275 1 c Black
+264 279 1 c Black
+265 268 1 c Black
+268 269 1 c Black
+268 270 1 c Black
+268 271 1 c Black
+268 272 1 c Black
+268 273 1 c Black
+268 274 1 c Black
+269 279 1 c Black
+270 286 1 c Black
+271 286 1 c Black
+275 276 1 c Black
+275 277 1 c Black
+275 278 1 c Black
+275 283 1 c Black
+275 284 1 c Black
+275 285 1 c Black
+275 288 1 c Black
+275 291 1 c Black
+279 280 1 c Black
+279 281 1 c Black
+279 282 1 c Black
+279 283 1 c Black
+279 284 1 c Black
+279 285 1 c Black
+286 287 1 c Black
+286 288 1 c Black
+286 289 1 c Black
+286 290 1 c Black
+286 291 1 c Black
+286 292 1 c Black
+286 293 1 c Black
+294 295 1 c Black
+294 296 1 c Black
+294 297 1 c Black
+294 298 1 c Black
+294 299 1 c Black
+294 300 1 c Black
+294 301 1 c Black
+294 303 1 c Black
+294 319 1 c Black
+294 321 1 c Black
+299 317 1 c Black
+300 310 1 c Black
+302 303 1 c Black
+302 295 1 c Black
+302 309 1 c Black
+302 303 1 c Black
+302 319 1 c Black
+302 321 1 c Black
+303 305 1 c Black
+303 317 1 c Black
+305 295 1 c Black
+305 307 1 c Black
+305 296 1 c Black
+305 309 1 c Black
+305 321 1 c Black
+307 310 1 c Black
+307 317 1 c Black
+309 317 1 c Black
+310 295 1 c Black
+310 296 1 c Black
+310 303 1 c Black
+310 297 1 c Black
+310 298 1 c Black
+310 316 1 c Black
+310 321 1 c Black
+317 295 1 c Black
+317 319 1 c Black
+317 296 1 c Black
+317 321 1 c Black
+322 323 1 c Black
+322 324 1 c Black
+322 325 1 c Black
+322 326 1 c Black
+322 327 1 c Black
+322 328 1 c Black
+329 330 1 c Black
+329 331 1 c Black
+329 332 1 c Black
+329 333 1 c Black
