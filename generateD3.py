@@ -12,6 +12,7 @@ def exportD3(readName, dumpName):
     G = nx.read_pajek(readName)
 
     for n in G:
+        print 'node', n
         G.node[n]['name'] = G.node[n]['label']
         G.node[n]['size'] = G.node[n]['color']
 
@@ -23,18 +24,18 @@ def exportD3(readName, dumpName):
 
 if __name__ == '__main__':
     
-    ID = 77
+    ID = ['77']
     
-    aggregate(str(ID), 100, 0)
-
-    readName = '../social/aggregate_plot_round=0_{}.net'.format(ID)
+    #aggregate(ID, 60, 0)
+    
+    readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force0/force.json'
     exportD3(readName, dumpName)
-
-    readName = '../social/aggregate_plot_round=1_{}.net'.format(ID)
+    
+    readName = '../social/aggregate_plot_round=1_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force1/force.json'
     exportD3(readName, dumpName)
-
-    readName = '../social/aggregate_plot_round=2_{}.net'.format(ID)
+    
+    readName = '../social/aggregate_plot_round=2_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force2/force.json'
     exportD3(readName, dumpName)
