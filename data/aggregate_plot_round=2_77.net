@@ -1,4 +1,4 @@
-*Vertices 333
+*Vertices 321
 1  "ClaimID" ic 5.0 fos 10
 2  "Body Shop" ic 8.90215457426 fos 10
 3  "Claimant" ic 1.70996089774 fos 10
@@ -297,7 +297,6 @@
 296  "Claimant" ic 2.68853275653 fos 10
 297  "Claimant" ic 2.68853275653 fos 10
 298  "Claimant" ic 2.68853275653 fos 10
-299  "Towing company" ic 4.3202435817 fos 10
 300  "Towing company" ic 4.56423654746 fos 10
 301  "Claimant" ic 2.68853275653 fos 10
 302  "ClaimID" ic 5.0 fos 10
@@ -308,7 +307,6 @@
 310  "ClaimID" ic 5.0 fos 10
 316  "Body Shop" ic 2.77660469183 fos 10
 317  "ClaimID" ic 5.0 fos 10
-319  "Towing company" ic 5.95125961857 fos 10
 321  "Inspector" ic 9.5178444625 fos 10
 322  "ClaimID" ic 5.0 fos 10
 323  "Inspector" ic 3.70625157998 fos 10
@@ -1068,19 +1066,19 @@
 294 296 1 c Black
 294 297 1 c Black
 294 298 1 c Black
-294 299 1 c Black
+294 300 1 c Black
 294 300 1 c Black
 294 301 1 c Black
 294 303 1 c Black
-294 319 1 c Black
+294 300 1 c Black
 294 321 1 c Black
-299 317 1 c Black
+300 317 1 c Black
 300 310 1 c Black
 302 303 1 c Black
 302 295 1 c Black
 302 309 1 c Black
 302 303 1 c Black
-302 319 1 c Black
+302 300 1 c Black
 302 321 1 c Black
 303 305 1 c Black
 303 317 1 c Black
@@ -1100,7 +1098,7 @@
 310 316 1 c Black
 310 321 1 c Black
 317 295 1 c Black
-317 319 1 c Black
+317 300 1 c Black
 317 296 1 c Black
 317 321 1 c Black
 322 323 1 c Black
