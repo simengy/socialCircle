@@ -15,12 +15,10 @@ class exporterD3():
         self.G = nx.read_pajek(readName)
 
 
-    def exportD3(self):
+    def export(self):
     
-        if claimList:
+        if self.claimList:
             self.fraudRingModifier() 
-        
-        #self.findClaimID()
 
         for n in self.G:
             self.G.node[n]['name'] = self.G.node[n]['label']
@@ -44,46 +42,62 @@ class exporterD3():
             for n in neighbors:
                 
                 if self.G.node[n]['label'] == 'Claimant':
+                    
                     if random.random() < claimantRatio:
                         removeList.append(n)
                     else:
                         remainList.append(n)
-                    
-        print 'length', len(remainList), len(removeList)
+        
+        print 'remove', removeList
+        print 'remain', remainList
+        for n in remainList:
+            for m in self.claimList:
+                
+                if random.random() > 0.1 and \
+                        self.G.node[m]['label']=='ClaimID':
+                    self.G.add_edge(n, m)
+
+        # Re-index
         for n in removeList:
             self.G.remove_node(n)
         
-        for n in remainList:
-            for m in self.claimList:
-                if random.random() > 0.3:
-                    self.G.add_edge(n, m)
-
-
+    
     def findClaimID(self):
 
-        for n in self.G:
-            if self.G.node[n]['label'] == 'ClaimID':
-                print 'ClaimID = ', n
+        c = nx.k_clique_communities(self.G, 2)
+        
+        nodeList = None
+        for count, n in enumerate(list(c)):
+            
+            if nodeList is None:
+                nodeList = n
+            elif len(n) > 20 and len(n) < 40:
+                nodeList = n
+                
+        self.claimList = list(nodeList)
 
 
 if __name__ == '__main__':
     
     ID = ['0603']
-    claimList = ['86', '45', '40']
+    claimList = None
     #aggregate(ID, 60, 0)
-    
-    readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
-    dumpName = '/var/www/homepage/public/d3/force0/force.json'
-    d3 = exporterD3(readName, dumpName, claimList)
-    d3.exportD3()
-    
-    readName = '../social/aggregate_plot_round=1_{}.net'.format('.'.join(ID))
-    dumpName = '/var/www/homepage/public/d3/force1/force.json'
-    
-    d3 = exporterD3(readName, dumpName, claimList)
-    d3.exportD3()
     
     readName = '../social/aggregate_plot_round=2_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force2/force.json'
     d3 = exporterD3(readName, dumpName, claimList)
-    d3.exportD3()
+    d3.findClaimID()
+    d3.export()
+    
+    claimList = d3.claimList
+    readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
+    dumpName = '/var/www/homepage/public/d3/force0/force.json'
+    d3 = exporterD3(readName, dumpName, claimList)
+    d3.export()
+
+    readName = '../social/aggregate_plot_round=1_{}.net'.format('.'.join(ID))
+    dumpName = '/var/www/homepage/public/d3/force1/force.json'
+    d3 = exporterD3(readName, dumpName, claimList)
+    d3.export()
+    
+
