@@ -74,7 +74,7 @@ def aggregate(userList, N_CLAIM=5, inDEG=0):
     in_w = 0.3 # the density of in-group edges
     between_w = 0.3 # the density of between-group edges
     in_deg = 14
-    between_deg = 12
+    between_deg = 13
 
     for r in xrange(len(ratio)):
         
@@ -163,5 +163,5 @@ def removeLink(G):
 
 if __name__ == '__main__':
 
-    userList = ['77']
-    aggregate(userList, 50, 0)
+    userList = ['0603']
+    aggregate(userList, 25, 0)
