@@ -29,7 +29,7 @@ class exporterD3():
         json.dump(d, open(self.dumpName, 'w'))
         print('wrote node-link json data to {}'.format(self.dumpName))
 
-
+    # convert claims subsets to fraud ring
     def fraudRingModifier(self, claimantRatio=0.5):
     
         removeList = []
@@ -53,7 +53,7 @@ class exporterD3():
         for n in remainList:
             for m in self.claimList:
                 
-                if random.random() > 0.1 and \
+                if random.random() > 0.3 and \
                         self.G.node[m]['label']=='ClaimID':
                     self.G.add_edge(n, m)
 
@@ -61,17 +61,19 @@ class exporterD3():
         for n in removeList:
             self.G.remove_node(n)
         
-    
-    def findClaimID(self):
+    # the frausters are small portion in the population
+    # using 10% +- 5% for demo purpose 
+    def findClaimID(self, cliqueSize, mean=0.1, std=0.02):
 
-        c = nx.k_clique_communities(self.G, 2)
-        
+        c = nx.k_clique_communities(self.G, cliqueSize)
+        N = len(self.G)
         nodeList = None
         for count, n in enumerate(list(c)):
             
+            print 'Community = ', count, ' size = ', len(n) 
             if nodeList is None:
                 nodeList = n
-            elif len(n) > 20 and len(n) < 40:
+            elif len(n) > (mean - std) * N and len(n) < (mean + std) * N:
                 nodeList = n
                 
         self.claimList = list(nodeList)
@@ -81,23 +83,24 @@ if __name__ == '__main__':
     
     ID = ['0603']
     claimList = None
-    #aggregate(ID, 60, 0)
-    
+    #aggregate(ID, 100, 0)
+
+    # target the subnet in layer3 as fraud ring
     readName = '../social/aggregate_plot_round=2_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force2/force.json'
     d3 = exporterD3(readName, dumpName, claimList)
-    d3.findClaimID()
+    d3.findClaimID(2)
     d3.export()
     
+    # retrieve to layer 2
     claimList = d3.claimList
     readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force0/force.json'
     d3 = exporterD3(readName, dumpName, claimList)
     d3.export()
-
+    
+    # retrieve to layer 1
     readName = '../social/aggregate_plot_round=1_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force1/force.json'
     d3 = exporterD3(readName, dumpName, claimList)
     d3.export()
-    
-

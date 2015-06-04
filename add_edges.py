@@ -7,7 +7,7 @@ def addEdges(srcList, tgtList, filename='additional.txt', density=0.5):
     for i in srcList:
         for j in tgtList:
                  
-            if random.random()>1.0-density and i!=j:
+            if random.random() < density and i != j:
                 f.write('{} {} {} {} {}\n'.format(str(i), str(j), str(1), 'c', 'Black'))
     
 
