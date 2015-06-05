@@ -88,10 +88,10 @@ class plotting:
             else:
                 bucket = self.segDegree(NI.GetInDeg())
             
-            # hacked 'col' for network metric 
+            # hacked 'col' in Pajek for network metric 
             if NI.GetId() not in self.nameList: 
                 name, _ = self.weighted_choice(bucket)
-                self.nameList[NI.GetId()] = name            
+                self.nameList[NI.GetId()] = name
             else:
                 name = self.nameList[NI.GetId()]
             

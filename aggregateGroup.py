@@ -21,12 +21,12 @@ def aggregate(userList, N_CLAIM=5, inDEG=0):
     claimantList = []
     for i in xrange(N_CLAIM):
         
-        temp = snap.GenStar(snap.PUNGraph, random.randrange(3, 9), False)
+        temp = snap.GenStar(snap.PUNGraph, random.randrange(3, 8), False)
         countID = G.GetNodes()
         
         for NI in temp.Nodes():
             G.AddNode(countID + NI.GetId())
-            if random.random() < 0.35:
+            if random.random() < 0.5:
                 claimantList.append(countID + NI.GetId())
 
         for E in temp.Edges():
@@ -72,9 +72,9 @@ def aggregate(userList, N_CLAIM=5, inDEG=0):
     # Add extra links
     ratio = [0.0, 0.4, 0.8] # the multi-layer effect by adding links layer by layer
     in_w = 0.3 # the density of in-group edges
-    between_w = 0.3 # the density of between-group edges
-    in_deg = 14
-    between_deg = 13
+    between_w = 0.4 # the density of between-group edges
+    in_deg = 11
+    between_deg = 12
 
     for r in xrange(len(ratio)):
         
@@ -135,7 +135,7 @@ def removeLink(G):
     plot = plotting(G, snap.gvlNeato, True)
     # 1st layer
     plot.hirachical()
-    print 'XXXX', len(plot.community), plot.community 
+    print 'DEBUG1', len(plot.community), plot.community 
     nodeList = []
    
     for node in plot.community:
@@ -143,7 +143,7 @@ def removeLink(G):
             if snap.GetShortPath(G, NI.GetId(), node) == 1:
                 if NI.GetId() not in nodeList:
                     nodeList.append(NI.GetId())
-        print 'YYY', node, nodeList 
+        print 'DEBUG2', node, nodeList 
 
     nodeList.extend(plot.community)
     rmList = snap.TIntV()
@@ -152,7 +152,7 @@ def removeLink(G):
         if NI.GetId() not in nodeList:
             rmList.Add(NI.GetId())
 
-    print 'ZZZ', rmList.Len()
+    print 'DEBUG3', rmList.Len()
     snap.DelNodes(G, rmList)
     
     print '\nRemoving Nodes which is not the adjacent ones of CLAIMID' 
