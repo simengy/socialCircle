@@ -16,14 +16,17 @@ class exporterD3():
 
 
     def export(self):
-    
-        if self.subset:
-            self.fraudRingModifier() 
 
+        # define the node attributes:
+        # display name, label/group, size/pageRank, fraud/non-fraud, betweenness, modularity 
         for n in self.G:
             self.G.node[n]['name'] = self.G.node[n]['label']
+            self.G.node[n]['label'] = self.G.node[n]['label'].split('_')[0]
             self.G.node[n]['size'] = self.G.node[n]['color']
 
+        if self.subset:
+            self.fraudRingModifier() 
+            
         d = json_graph.node_link_data(self.G)
 
         json.dump(d, open(self.dumpName, 'w'))
@@ -54,7 +57,7 @@ class exporterD3():
         for n in remainList:
             for m in self.subset:
                 
-                if random.random() > 0.5 and \
+                if random.random() < 0.8 and \
                         self.G.node[m]['label']=='ClaimID':
                     self.G.add_edge(n, m)
 
@@ -84,9 +87,9 @@ class exporterD3():
 
 if __name__ == '__main__':
     
-    ID = ['0603']
+    ID = ['06122015']
     fraudRing = None
-    #aggregate(ID, N_CLAIM=100)
+    aggregate(ID, N_CLAIM=60)
 
     # retrieve to layer 0
     readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))

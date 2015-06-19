@@ -8,15 +8,15 @@ class plotting:
 
     def __init__(self, graph, layout, printLabel=True):
 
-        # Degree of Edge: Role, Color, Weight
+        # Degree of Edge: Role, Color, Weight, iterator
         self.groups = {
-                0:[['ClaimID','yellow',0.4],],
-                1:[['Doctor', 'red', 0.3],
-                    ['Body Shop', 'yellow', 0.3], 
-                    ['Towing company', 'orange', 0.3],
-                    ['Inspector', 'blue', 0.3],
-                    ['Lawyer', 'purple', 0.2]],
-                2:[['Claimant', 'green', 0.7]]
+                0:[['ClaimID','yellow',0.4, 0],],
+                1:[['Doctor', 'red', 0.3, 0],
+                    ['Body Shop', 'yellow', 0.3, 0], 
+                    ['Towing company', 'orange', 0.3, 0],
+                    ['Inspector', 'blue', 0.3, 0],
+                    ['Lawyer', 'purple', 0.2, 0]],
+                2:[['Claimant', 'green', 0.7, 0]]
                 }
 
         self.G = graph
@@ -29,15 +29,16 @@ class plotting:
     
     def weighted_choice(self, key):
     
-        total = sum(w for name, col, w in self.groups[key])
+        total = sum(w for name, col, w, iterator in self.groups[key])
         r = random.uniform(0., total)
         upto = 0.
     
-        for name, col, w in self.groups[key]:
-        
-            if upto + w  > r:
-                return name, col
-            upto += w
+        for index in xrange(len(self.groups[key])):
+            print 'debug', index
+            if upto + self.groups[key][index][2]  > r:
+                self.groups[key][index][3] += 1
+                return self.groups[key][index][0] + '_' + str(self.groups[key][index][3]), self.groups[key][index][2]
+            upto += self.groups[key][index][2]
         
         assert False, "Shouldn't get here"
 
