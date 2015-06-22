@@ -15,8 +15,8 @@ class plotting:
                     ['Body Shop', 'yellow', 0.3, 0], 
                     ['Towing company', 'orange', 0.3, 0],
                     ['Inspector', 'blue', 0.3, 0],
-                    ['Lawyer', 'purple', 0.2, 0]],
-                2:[['Claimant', 'green', 0.7, 0]]
+                    ['Lawyer', 'purple', 0.2, 0],],
+                2:[['Claimant', 'green', 0.7, 0],]
                 }
 
         self.G = graph
@@ -34,7 +34,7 @@ class plotting:
         upto = 0.
     
         for index in xrange(len(self.groups[key])):
-            print 'debug', index
+            
             if upto + self.groups[key][index][2]  > r:
                 self.groups[key][index][3] += 1
                 return self.groups[key][index][0] + '_' + str(self.groups[key][index][3]), self.groups[key][index][2]
@@ -78,8 +78,9 @@ class plotting:
         # First to select Insured nodes
         self.hirachical()
         
-        Nodes = snap.TIntFltH()
-        snap.GetPageRank(self.G, Nodes)
+        Nodes1 = snap.TIntFltH()
+        snap.GetPageRank(self.G, Nodes1)
+
 
         for NI in self.G.Nodes():
             if NI.GetId() in self.community:
@@ -89,19 +90,19 @@ class plotting:
             else:
                 bucket = self.segDegree(NI.GetInDeg())
             
-            # hacked 'col' in Pajek for network metric 
+            # hacked 'col' in Pajek for network metrics 
             if NI.GetId() not in self.nameList: 
                 name, _ = self.weighted_choice(bucket)
                 self.nameList[NI.GetId()] = name
             else:
                 name = self.nameList[NI.GetId()]
             
-            if name == 'ClaimID':
+            if name.split('_')[0] == 'ClaimID':
                 col = 5.0
             else:
-                col = Nodes[NI.GetId()] * 2000
-            
-            #print NI.GetId(), NI.GetInDeg(), NI.GetOutDeg(), name, col
+                col = Nodes1[NI.GetId()] * 2000
+        
+
             if self.printLabel:
                 self.labels[NI.GetId()] = name
             else:
