@@ -89,31 +89,37 @@ class exporterD3():
         self.subset = list(nodeList)
 
     
-    def KPI(self, KPITable):
+    def KPI(self, KPINode, KPIEdge):
 
         pr = nx.betweenness_centrality(self.G)
         
-        with open(KPITable, 'wb') as csvfile:
+        with open(KPINode, 'wb') as csvfile:
             table = csv.writer(csvfile, delimiter=',')
             table.writerow(['name', 'betweenness', 'modularityClass', 'pagerank' ])         
             for n in pr:
 
                 self.G.node[n]['betweenness'] = pr[n]
                 self.G.node[n]['pagerank'] = float(self.G.node[n]['size']) / 2000.0
-                table.writerow( [self.G.node[n]['name'],  self.G.node[n]['betweenness'], self.G.node[n]['modularityClass'], self.G.node[n]['pagerank'] ])         
-        
+                table.writerow( [self.G.node[n]['name'],  self.G.node[n]['betweenness'], self.G.node[n]['modularityClass'], self.G.node[n]['pagerank'] ])   
+
+
+        nx.write_edgelist(self.G, KPIEdge, data=['weight'])
+
+
 
 if __name__ == '__main__':
     
     ID = ['06122015']
     fraudRing = None
-    aggregate(ID, N_CLAIM=100)
+    aggregate(ID, N_CLAIM=50)
 
     # layer1
     readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force0/force.json'
     d3 = exporterD3(readName, dumpName, fraudRing)
-    d3.export()
+    d3.findClaimID(cliqueSize = 2)
+    d3.export(removeTag=False)
+    d3.KPI('./KPI/node_layer1.csv', './KPI/edge_layer1.csv')
 
     # filter out the subnet in layer3 as fraud ring
     readName = '../social/aggregate_plot_round=2_{}.net'.format('.'.join(ID))
@@ -121,7 +127,7 @@ if __name__ == '__main__':
     d3 = exporterD3(readName, dumpName, fraudRing)
     d3.findClaimID(cliqueSize = 2)
     d3.export()
-    d3.KPI('./KPI/KPI_layer3.csv')
+    d3.KPI('./KPI/node_layer3.csv', './KPI/edge_layer3.csv')
     fraudRing = d3.subset
 
     # retrieve to layer 2
@@ -132,4 +138,4 @@ if __name__ == '__main__':
     d3.findClaimID(cliqueSize = 2)
     d3.subset = fraudRing
     d3.export()
-    d3.KPI('./KPI/KPI_layer2.csv')
+    d3.KPI('./KPI/node_layer2.csv', './KPI/edge_layer2.csv')
