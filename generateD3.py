@@ -24,7 +24,23 @@ class exporterD3():
             self.G.node[n]['name'] = self.G.node[n]['label']
             self.G.node[n]['label'] = self.G.node[n]['label'].split('_')[0]
             self.G.node[n]['size'] = self.G.node[n]['color']
+            ind = int(self.G.node[n]['name'].split('_')[1])
 
+            if self.G.node[n]['label'] == 'ClaimID':
+
+                if  ind % 5 != 0:
+                    self.G.node[n]['status'] = 'open'
+                else:
+                    self.G.node[n]['status'] = 'close'
+                
+                if ind % 3 != 0:
+                    self.G.node[n]['type'] = 'BI'
+                else:
+                    self.G.node[n]['type'] = 'non-BI'
+            else:
+                self.G.node[n]['status'] = 'Blank'
+                self.G.node[n]['type'] = 'Blank'
+        
         if self.subset and removeTag == True:
             self.fraudRingModifier() 
             
@@ -95,12 +111,12 @@ class exporterD3():
         
         with open(KPINode, 'wb') as csvfile:
             table = csv.writer(csvfile, delimiter=',')
-            table.writerow(['name', 'betweenness', 'modularityClass', 'pagerank' ])         
+            table.writerow(['name', 'status', 'type', 'betweenness', 'modularityClass', 'pagerank' ])         
             for n in pr:
 
                 self.G.node[n]['betweenness'] = pr[n]
                 self.G.node[n]['pagerank'] = float(self.G.node[n]['size']) / 2000.0
-                table.writerow( [self.G.node[n]['name'],  self.G.node[n]['betweenness'], self.G.node[n]['modularityClass'], self.G.node[n]['pagerank'] ])   
+                table.writerow( [self.G.node[n]['name'], self.G.node[n]['status'], self.G.node[n]['type'], self.G.node[n]['betweenness'], self.G.node[n]['modularityClass'], self.G.node[n]['pagerank'] ])   
 
 
         nx.write_edgelist(self.G, KPIEdge, data=['weight'])
@@ -111,7 +127,7 @@ if __name__ == '__main__':
     
     ID = ['06122015']
     fraudRing = None
-    aggregate(ID, N_CLAIM=50)
+    aggregate(ID, N_CLAIM=20)
 
     # layer1
     readName = '../social/aggregate_plot_round=0_{}.net'.format('.'.join(ID))
