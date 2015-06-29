@@ -81,11 +81,12 @@ class exporterD3():
                 neighbors = nx.all_neighbors(self.G, claim)
             
                 for n in neighbors:
-                
+                    
                     if self.G.node[n]['label'].split('_')[0] != 'ClaimID' and \
                             n not in self.removeList:
                         if random.random() < claimantRatio:
                             self.removeList.append(n)
+                            continue
                     
                     if n not in self.remainList:
                         self.remainList.append(n)
@@ -137,6 +138,7 @@ class exporterD3():
             N_part = 0.
             
             for NI in n:
+                
                 if self.G.node[NI]['label'].split('_')[0] == 'ClaimID':
                     N_claim += 1.0
                 else:
@@ -146,7 +148,7 @@ class exporterD3():
                 ratio = N_claim / N_part
                 self.G.node[NI]['modularityClass'] = count
                 self.G.node[NI]['fraudScore'] = ratio
-
+                
                 if maximum < ratio:
                     maximum = ratio
         
@@ -177,14 +179,14 @@ class exporterD3():
                 try:
                     table.writerow( [self.G.node[n]['name'], 
                     self.G.node[n]['group'],
-                    self.G.node[n]['modularity'], 
+                    self.G.node[n]['modularityClass'], 
                     self.G.node[n]['pagerank'], 
                     self.G.node[n]['geo'], 
                     self.G.node[n]['timestamp'], 
                     self.G.node[n]['fraudScore'] ])
                 except:
-                    print 'Node = ', n
-                    KeyError() 
+                    print 'Problematic Node = ', n, self.G.node[n]['timestamp'] 
+                    raise 
 
         with open(KPIEdge, 'wb') as csvfile:
            
@@ -205,7 +207,7 @@ if __name__ == '__main__':
     fraudRing = None
     removeNodes = None
     remainNodes = None
-    aggregate(ID, N_CLAIM=60)
+    aggregate(ID, N_CLAIM=50)
 
 
     # filter out the subnet in layer3 as fraud ring
