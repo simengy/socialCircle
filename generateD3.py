@@ -2,6 +2,7 @@ import json
 import csv
 import networkx as nx
 import random
+import xlsxwriter
 from datetime import datetime, timedelta
 from networkx.readwrite import json_graph
 
@@ -23,7 +24,14 @@ class exporterD3():
 
         GEO = ['CA', 'AZ', 'FL', 'NY', 'NC', 'OH', 'TX', 'WA', 'CO']
         TIME = [(datetime.today() - timedelta(days=x)).strftime('%Y-%m-%d') for x in range(0,100)]
-        groups = {}
+        groups = {'ClaimID':4,
+                'Claimant':1,
+                'Body Shop':7,
+                'Doctor':3,
+                'Inspector':6,
+                'Lawyer':5,
+                'Towing company':2
+                }
         count = 1
         # define the node attributes:
         # display name, label/group, size/pageRank, fraud/non-fraud, betweenness, modularity
@@ -36,10 +44,6 @@ class exporterD3():
             ind = int(self.G.node[n]['name'].split('_')[1])
             key = self.G.node[n]['label']
 
-            if key not in groups:
-                groups[key] = count
-                count += 1
-            
             self.G.node[n]['group'] = groups[key]
             
             if self.G.node[n]['label'] == 'ClaimID':
@@ -88,7 +92,8 @@ class exporterD3():
                             self.removeList.append(n)
                             continue
                     
-                    if n not in self.remainList:
+                    if n not in self.remainList and \
+                            self.G.node[n]['label'].split('_')[0] != 'ClaimID':
                         self.remainList.append(n)
         
         print 'remove', self.removeList
@@ -111,24 +116,27 @@ class exporterD3():
     # wich (10% +- 2%) of nodes
     def findClaimID(self, cliqueSize, density, mean=0.1, std=0.05):
         
-        c = nx.k_clique_communities(self.G, cliqueSize)
-        N = len(self.G)
-        nodeList = None
-        
-        for count, n in enumerate(list(c)):
+        # STEP1: allocate subnets for fraud rings
+        if self.subset is None:
             
-            print 'Community = ', count, ' Size = ', len(n)
-            if nodeList is None:
-                nodeList = n
-            elif len(n) > (mean - std) * N and len(n) < (mean + std) * N:
-                nodeList = n
+            c = nx.k_clique_communities(self.G, cliqueSize)
+            N = len(self.G)
+            nodeList = None
+         
+            for count, n in enumerate(list(c)):
             
-        if self.subset is None:     
+                print 'Community = ', count, ' Size = ', len(n)
+                if nodeList is None:
+                    nodeList = n
+                elif len(n) > (mean - std) * N and len(n) < (mean + std) * N:
+                    nodeList = n
+            
             self.subset = list(nodeList)
         
         if self.subset:
             self.fraudRingModifier(density=density) 
-
+        
+        # STEP2: calculate network KPIs
         c = nx.k_clique_communities(self.G, cliqueSize)
         maximum = 0.0
 
@@ -138,13 +146,13 @@ class exporterD3():
             N_part = 0.
             
             for NI in n:
-                
                 if self.G.node[NI]['label'].split('_')[0] == 'ClaimID':
                     N_claim += 1.0
                 else:
                     N_part += 1.0
             
             for NI in n:
+                
                 ratio = N_claim / N_part
                 self.G.node[NI]['modularityClass'] = count
                 self.G.node[NI]['fraudScore'] = ratio
@@ -152,7 +160,7 @@ class exporterD3():
                 if maximum < ratio:
                     maximum = ratio
         
-       
+        # STEP3: assign fraud scores
         c = nx.k_clique_communities(self.G, cliqueSize)
  
         for count, n in enumerate(list(c)): 
@@ -163,14 +171,14 @@ class exporterD3():
                 self.G.node[NI]['fraudScore'] = int(self.G.node[NI]['fraudScore'])
 
     
-    def KPI(self, KPINode, KPIEdge):
+    def KPI_CSV(self, KPINode, KPIEdge):
 
         pr = nx.betweenness_centrality(self.G)
-        
+
         with open(KPINode, 'wb') as csvfile:
             
             table = csv.writer(csvfile, delimiter=',')
-            table.writerow(['name', 'group', 'modularity', 'pageRank','geo', 'time', 'fraudScore' ])         
+            table.writerow(['name', 'group', 'modularity', 'PageRank','geo', 'time', 'fraudScore' ])         
             
             for n in pr:
                 
@@ -184,21 +192,59 @@ class exporterD3():
                     self.G.node[n]['geo'], 
                     self.G.node[n]['timestamp'], 
                     self.G.node[n]['fraudScore'] ])
+
                 except:
-                    print 'Problematic Node = ', n, self.G.node[n]['timestamp'] 
+                    print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name'] 
                     raise 
 
         with open(KPIEdge, 'wb') as csvfile:
            
             table = csv.writer(csvfile, delimiter=',')
             table.writerow(['source', 'target', 'value'])         
-            
+
             for s, t in self.G.edges_iter():
                 
                 table.writerow( [self.G.node[s]['name'], 
                     self.G.node[t]['name'], 
                     5.0 ] )
 
+
+    def KPI_XLSX(self, layerName):
+
+        pr = nx.betweenness_centrality(self.G)
+        
+        wb = xlsxwriter.Workbook(layerName)
+        ws1 = wb.add_worksheet('nodes')
+        ws2 = wb.add_worksheet('links')
+        row = 0 
+        ws1.write_row(row, 0, ['name', 'group', 'modularity', 'PageRank','geo', 'time', 'fraudScore' ])         
+            
+        for n in pr:
+                
+            try:
+                row += 1
+                ws1.write_row(row, 0, [self.G.node[n]['name'], 
+                self.G.node[n]['group'],
+                self.G.node[n]['modularityClass'], 
+                self.G.node[n]['pagerank'], 
+                self.G.node[n]['geo'], 
+                self.G.node[n]['timestamp'], 
+                self.G.node[n]['fraudScore'] ])
+            except:
+                print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name'] 
+                raise 
+
+        row = 0
+        ws2.write_row(row, 0, ['source', 'target', 'value'])         
+
+        for s, t in self.G.edges_iter():
+                
+            row += 1
+            ws2.write_row(row, 0, [self.G.node[s]['name'], 
+                self.G.node[t]['name'], 
+                5.0 ] )
+
+        wb.close()
 
 
 if __name__ == '__main__':
@@ -207,7 +253,7 @@ if __name__ == '__main__':
     fraudRing = None
     removeNodes = None
     remainNodes = None
-    aggregate(ID, N_CLAIM=50)
+    aggregate(ID, N_CLAIM=25)
 
 
     # filter out the subnet in layer3 as fraud ring
@@ -216,7 +262,8 @@ if __name__ == '__main__':
     d3 = exporterD3(readName, dumpName, removeNodes, remainNodes, fraudRing)
     d3.findClaimID(cliqueSize = 2, density = 0.5)
     d3.export()
-    d3.KPI('./KPI/node_layer3.csv', './KPI/edge_layer3.csv')
+    d3.KPI_CSV('./KPI/node_layer3.csv', './KPI/edge_layer3.csvy')
+    d3.KPI_XLSX('/usr/share/tomcat/webapps/FAE/custom_project/xml/workshop/excel/Linklayer3.xlsx')
     fraudRing = d3.subset
     removeNodes = d3.removeList
     remainNodes = d3.remainList
@@ -227,7 +274,8 @@ if __name__ == '__main__':
     d3 = exporterD3(readName, dumpName, removeNodes, remainNodes, fraudRing)
     d3.findClaimID(cliqueSize = 2, density = 0.0)
     d3.export()
-    d3.KPI('./KPI/node_layer1.csv', './KPI/edge_layer1.csv')
+    d3.KPI_CSV('./KPI/node_layer1.csv', './KPI/edge_layer1.csv')
+    d3.KPI_XLSX('/usr/share/tomcat/webapps/FAE/custom_project/xml/workshop/excel/Linklayer1.xlsx')
 
 
     # retrieve to layer 2
@@ -237,4 +285,5 @@ if __name__ == '__main__':
     d3 = exporterD3(readName, dumpName, removeNodes, remainNodes, fraudRing)
     d3.findClaimID(cliqueSize = 2, density = 0.3)
     d3.export()
-    d3.KPI('./KPI/node_layer2.csv', './KPI/edge_layer2.csv')
+    d3.KPI_CSV('./KPI/node_layer2.csv', './KPI/edge_layer2.csv')
+    d3.KPI_XLSX('/usr/share/tomcat/webapps/FAE/custom_project/xml/workshop/excel/Linklayer2.xlsx')
