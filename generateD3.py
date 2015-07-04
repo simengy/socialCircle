@@ -32,7 +32,7 @@ class exporterD3():
                 'Lawyer':5,
                 'Towing company':2
                 }
-        count = 1
+        
         # define the node attributes:
         # display name, label/group, size/pageRank, fraud/non-fraud, betweenness, modularity
         
@@ -73,7 +73,7 @@ class exporterD3():
         print('wrote node-link json data to {}'.format(self.dumpName))
 
     # convert claims subsets to fraud ring
-    def fraudRingModifier(self, density, claimantRatio=0.4):
+    def fraudRingModifier(self, density, claimantP=0.4, restP=0.4):
         
         if self.removeList is None and self.remainList is None:
         
@@ -81,24 +81,29 @@ class exporterD3():
             self.remainList = []
 
             for claim in self.subset:
-
-                neighbors = nx.all_neighbors(self.G, claim)
-            
-                for n in neighbors:
+                
+                if self.G.node[claim]['label'].split('_')[0] == 'ClaimID':
                     
-                    if self.G.node[n]['label'].split('_')[0] != 'ClaimID' and \
-                            n not in self.removeList:
-                        if random.random() < claimantRatio:
-                            self.removeList.append(n)
-                            continue
+                    neighbors = nx.all_neighbors(self.G, claim)
+                                 
+                    for n in neighbors:
                     
-                    if n not in self.remainList and \
-                            self.G.node[n]['label'].split('_')[0] != 'ClaimID':
-                        self.remainList.append(n)
+                        assert self.G.node[n]['label'].split('_')[0] != 'ClaimID'    
+                        if n not in self.removeList: 
+                            
+                            if self.G.node[n]['label'].split('_')[0] == 'Claimant' and random.random() < claimantP:
+                                self.removeList.append(n)
+                                continue
+                            elif random.random() < restP:
+                                self.removeList.append(n)
+                                continue
+                                
+                        if n not in self.remainList:
+                            self.remainList.append(n)
         
         print 'remove', self.removeList
         print 'remain', self.remainList
-        print 'claimID', self.subset
+        print 'all', self.subset
 
         for n in self.remainList:
             for m in self.subset:
@@ -195,7 +200,19 @@ class exporterD3():
 
                 except:
                     print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name'] 
-                    raise 
+                    
+                    self.G.node[n]['modularityClass'] = -1
+                    self.G.node[n]['fraudScore'] = 10
+                    
+                    table.writerow( [self.G.node[n]['name'], 
+                        self.G.node[n]['group'],
+                        self.G.node[n]['modularityClass'], 
+                        self.G.node[n]['pagerank'], 
+                        self.G.node[n]['geo'], 
+                        self.G.node[n]['timestamp'], 
+                        self.G.node[n]['fraudScore'] ])
+
+                    pass 
 
         with open(KPIEdge, 'wb') as csvfile:
            
@@ -231,8 +248,20 @@ class exporterD3():
                 self.G.node[n]['timestamp'], 
                 self.G.node[n]['fraudScore'] ])
             except:
-                print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name'] 
-                raise 
+                print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name']    
+                
+                self.G.node[NI]['modularityClass'] = -1
+                self.G.node[NI]['fraudScore'] = 10
+                    
+                table.writerow( [self.G.node[n]['name'], 
+                    self.G.node[n]['group'],
+                    self.G.node[n]['modularityClass'], 
+                    self.G.node[n]['pagerank'], 
+                    self.G.node[n]['geo'], 
+                    self.G.node[n]['timestamp'], 
+                    self.G.node[n]['fraudScore'] ])
+
+                pass
 
         row = 0
         ws2.write_row(row, 0, ['source', 'target', 'value'])         
@@ -249,20 +278,20 @@ class exporterD3():
 
 if __name__ == '__main__':
     
-    ID = ['06122015']
+    ID = ['07122015']
     fraudRing = None
     removeNodes = None
     remainNodes = None
-    aggregate(ID, N_CLAIM=25)
+    aggregate(ID, N_CLAIM=60)
 
 
     # filter out the subnet in layer3 as fraud ring
     readName = '../social/aggregate_plot_round=2_{}.net'.format('.'.join(ID))
     dumpName = '/var/www/homepage/public/d3/force2/force.json'
     d3 = exporterD3(readName, dumpName, removeNodes, remainNodes, fraudRing)
-    d3.findClaimID(cliqueSize = 2, density = 0.5)
+    d3.findClaimID(cliqueSize = 2, density = 0.6)
     d3.export()
-    d3.KPI_CSV('./KPI/node_layer3.csv', './KPI/edge_layer3.csvy')
+    d3.KPI_CSV('./KPI/node_layer3.csv', './KPI/edge_layer3.csv')
     d3.KPI_XLSX('/usr/share/tomcat/webapps/FAE/custom_project/xml/workshop/excel/Linklayer3.xlsx')
     fraudRing = d3.subset
     removeNodes = d3.removeList
