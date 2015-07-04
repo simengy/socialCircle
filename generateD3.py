@@ -73,7 +73,7 @@ class exporterD3():
         print('wrote node-link json data to {}'.format(self.dumpName))
 
     # convert claims subsets to fraud ring
-    def fraudRingModifier(self, density, claimantP=0.4, restP=0.4):
+    def fraudRingModifier(self, density, claimantP=0.5, restP=0.3):
         
         if self.removeList is None and self.remainList is None:
         
@@ -159,7 +159,7 @@ class exporterD3():
             for NI in n:
                 
                 ratio = N_claim / N_part
-                self.G.node[NI]['modularityClass'] = count
+                self.G.node[NI]['modularityClass'] = count + 1
                 self.G.node[NI]['fraudScore'] = ratio
                 
                 if maximum < ratio:
@@ -201,7 +201,7 @@ class exporterD3():
                 except:
                     print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name'] 
                     
-                    self.G.node[n]['modularityClass'] = -1
+                    self.G.node[n]['modularityClass'] = 0
                     self.G.node[n]['fraudScore'] = 10
                     
                     table.writerow( [self.G.node[n]['name'], 
@@ -250,7 +250,7 @@ class exporterD3():
             except:
                 print 'Problematic Node = ', n, self.G.node[n]['timestamp'],self.G.node[n]['name']    
                 
-                self.G.node[NI]['modularityClass'] = -1
+                self.G.node[NI]['modularityClass'] = 0
                 self.G.node[NI]['fraudScore'] = 10
                     
                 table.writerow( [self.G.node[n]['name'], 
@@ -282,7 +282,7 @@ if __name__ == '__main__':
     fraudRing = None
     removeNodes = None
     remainNodes = None
-    aggregate(ID, N_CLAIM=60)
+    aggregate(ID, N_CLAIM=75)
 
 
     # filter out the subnet in layer3 as fraud ring
